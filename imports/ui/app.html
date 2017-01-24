@@ -2,20 +2,15 @@
 
 
 <body>
-  <h1>
-    {{ titreDuSite }}
-  </h1>
-
-  {{ #each storeElements }}
-    {{> element}}
-  {{ /each}}
-
-  {{> colonnegauche}}
-  {{> colonnemilieu}}
-  {{> colonnedroite}}
+  <div class="ui three column stackable grid">
+    <div class="column left">
+      {{> colonnegauche}}
+    </div>
+    <div class="column">
+      {{> colonnemilieu}}
+    </div>
+    <div class="column">
+      {{> colonnedroite}}
+    </div>
+  </div>
 </body>
-
-
-<template name="element">
-  <h1>{{titre}}</h1>
-</template>

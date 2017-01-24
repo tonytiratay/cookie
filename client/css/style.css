@@ -1,0 +1,49 @@
+
+body {
+  background: url(../img/bg3.jpg);
+  background-size: cover;
+}
+
+.logo {
+  text-align: center;
+  padding: 15px;
+  background: black;
+  font-size: 50px;
+  color: white;
+}
+
+#bouton {
+  width:100%;
+  max-width: 400px;;
+  padding: 20px;
+}
+
+#affichage {
+  padding-top: 50px;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
+.icon-to-buy {
+  max-width: 50px;
+}
+
+.storeElement {
+  padding: 15px;
+  background: green;
+  color: white;
+  line-height: 100px;
+  height: 100px;
+}
+
+.disabled {
+  opacity: 0.3;
+  background: #dcdcdc;
+  color:#444;
+}
+
+.invisible {
+  height: 0;
+  display: none;
+}

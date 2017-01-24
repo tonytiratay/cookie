@@ -1,21 +1,15 @@
 
 import { Template } from 'meteor/templating';
 
+Session.set('score', 1);
+Session.set('compteur', 1);
+
 import './app.html';
-import './colonnegauche/colonnegauche.html';
-import './colonnedroite/colonnedroite.html';
-import './colonnemilieu/colonnemilieu.html';
-
-Template.body.helpers({
-  storeElements: [
-    { titre: "Grand mère"},
-    { titre: "Curseur"},
-    { titre: "Ferme"},
-    { titre: "Usine"}
-  ] ,
-
-  titreDuSite: "Cookie Clicker nouvelle version",
-});
+import './colonnegauche/gauche.js';
+import './colonnedroite/droite.js';
+import './colonnemilieu/milieu.js';
 
 
-// Template.nomduTemplate.events
+
+console.log(Session.get('score'));
+console.log(Session.get('compteur'));

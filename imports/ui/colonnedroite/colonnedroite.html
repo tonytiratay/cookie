@@ -1,4 +1,16 @@
 
 <template name="colonnedroite">
-  <h2>Je suis la nouvelle colonne droite</h2>
+  <h1 class="logo">Acheter</h1>
+  {{ #each storeElements }}
+    {{> element}}
+  {{ /each}}
+</template>
+
+<template name="element">
+  <div
+  id={{titre}}
+  class = "storeElement {{isDisabled(price)}}" >
+  <img src={{icon}} class="icon-to-buy" alt="">
+  {{titre}} ({{price}})
+</div>
 </template>
