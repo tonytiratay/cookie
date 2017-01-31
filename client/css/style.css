@@ -35,12 +35,14 @@ body {
   color: white;
   line-height: 100px;
   height: 100px;
+  cursor: pointer;
 }
 
 .disabled {
   opacity: 0.3;
   background: #dcdcdc;
   color:#444;
+  cursor: auto;
 }
 
 .invisible {

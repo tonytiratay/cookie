@@ -1,8 +1,9 @@
 import './colonnegauche.html';
+import {Score, Compteur} from '/imports/components/system.js';
 
 Template.colonnegauche.events({
   'click .cookie-btn' (e){
-    let newScore = Session.get('score') + Session.get('compteur');
-    Session.set('score', newScore);
+    const NewScore = Score.get() + Compteur.get();
+    Score.set(NewScore);
   }
 });

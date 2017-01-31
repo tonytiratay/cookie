@@ -1,25 +1,45 @@
 import './colonnedroite.html';
-import elements from '/imports/components/storeElements.js';
+import {Score, StoreElements, AutoClick, Compteur, BoughtElements} from '/imports/components/system.js';
+
 
 Template.colonnedroite.helpers({
-  storeElements: elements,
+  storeElements: StoreElements.get(),
 });
 
 Template.element.helpers({
   isDisabled: (price)=> {
-    if(Session.get('score') < price){
+    if(Score.get() < price){
       return 'disabled';
     }
-  },
-  isVisible: (price)=> {
-    if(Session.get('score') < price * 10){
-      return 'invisible';
-    }
-  },
+  }
 });
 
 Template.element.events({
   'click' (e){
-    console.log("Click sur " + e.target.id);
+
+    // Trier dans le tableau "elements" pour retrouver l'objet
+    // avec l'id de l'élément sur lequel nous avons cliqué
+    const results = $.grep(StoreElements.get(), function(elem){
+      return elem.titre == e.target.id;
+    });
+
+    const result = results[0];
+    Score.set( Score.get() - result.price );
+
+    if(result.titre == "Auto Click"){
+      AutoClick.set(!AutoClick.get())
+    }
+    if(result.titre == "Multiplier"){
+      Compteur.set( Compteur.get() + 1);
+      let bought = BoughtElements.get();
+      bought.push(result);
+      BoughtElements.set(bought);
+    }
+    if(result.titre == "Grand Mère"){
+      let bought = BoughtElements.get();
+      bought.push(result);
+      BoughtElements.set(bought);
+    }
+
   }
 });

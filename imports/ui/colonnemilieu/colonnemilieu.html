@@ -1,5 +1,16 @@
 <template name="colonnemilieu">
   <div id="affichage">
     <h1>{{score}} cookies</h1>
+    <h1 class="logo">Éléments acheté</h1>
+    {{ #each boughtElements }}
+      {{> boughtElement}}
+    {{ /each}}
   </div>
+</template>
+<template name="boughtElement">
+  <div
+  id={{titre}} >
+  <img src={{icon}} class="icon-to-buy" alt="">
+  {{titre}} ({{price}})
+</div>
 </template>
